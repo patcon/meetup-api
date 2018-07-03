@@ -3,6 +3,61 @@
     "apiVersion": 3,
     "description": "Meetup API v3 methods",
     "operations": {
+            "GetEvent": {
+            "version": "3",
+            "name": "GetEvent",
+            "httpMethod": "GET",
+            "parameters": {
+                "urlname": {
+                    "location": "uri",
+                    "required": true,
+                    "description": null
+                },
+                "id": {
+                    "location": "uri",
+                    "required": true,
+                    "description": null
+                },
+                "fields": {
+                    "location": "query",
+                    "required": false,
+                    "description": "Request that additional fields (separated by commas) be included in the output."
+                },
+                "page": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "offset": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "desc": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "order": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "only": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "omit": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                }
+            },
+            "summary": "Retrieve a single meetup",
+            "uri": "/{urlname}/events/{id}",
+            "notes": "Only authorization parameters are needed. Some groups, while remaining private, still wish to show some information about their events. You can include these events in results using the `limited_events` request parameter."
+        },
         "CreateBatch": {
             "version": "3",
             "name": "CreateBatch",
