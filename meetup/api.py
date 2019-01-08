@@ -166,6 +166,8 @@ class Client(object):
             response = self.session.post(request_url, data=parameters)
         elif request_http_method == 'DELETE':
             response = self.session.delete(request_url, params=parameters)
+        elif request_http_method == 'PATCH':
+            response = self.session.patch(request_url, params=parameters)
         else:
             raise exceptions.HttpMethodError('HTTP Method not implemented: [{0}]'.format(request_http_method))
 
