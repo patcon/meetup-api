@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "description": "Meetup API v3 methods",
     "operations": {
-            "GetEvent": {
+        "GetEvent": {
             "version": "3",
             "name": "GetEvent",
             "httpMethod": "GET",
