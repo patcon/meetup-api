@@ -3,6 +3,56 @@
     "apiVersion": 3,
     "description": "Meetup API v3 methods",
     "operations": {
+        "GetPhotoAlbums": {
+            "version": "3",
+            "name": "GetPhotoAlbums",
+            "httpMethod": "GET",
+            "parameters": {
+                "group_urlname": {
+                    "location": "uri",
+                    "required": true,
+                    "description": null
+                },
+                "fields": {
+                    "location": "query",
+                    "required": false,
+                    "description": "A comma-delimited list of optional response fields. Currently supported values are 'self' and 'short_link'"
+                },
+                "page": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "offset": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "desc": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "order": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "only": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                },
+                "omit": {
+                    "location": "query",
+                    "required": false,
+                    "description": null
+                }
+            },
+            "summary": "This method returns photo albums associated with Meetup groups. To create albums, see the corresponding write method.",
+            "uri": "/{group_urlname}/photo_albums",
+            "notes": "At least one of the required parameter(s) must be supplied with the request."
+        },
         "EditEvent": {
             "version": "3",
             "name": "EditEvent",
