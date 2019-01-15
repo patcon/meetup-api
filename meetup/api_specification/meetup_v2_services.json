@@ -304,6 +304,26 @@
             "uri": "/2/photo",
             "notes": "A photo album or event ID must be supplied with the request, which must be a POST of content-type `multipart/form-data`. The currently authenticated user must be a member of the group that is hosting the event. Parameters other than photo may be passed in as a query string or within the posted content. If authenticating with OAuth, no parameters in the multipart form data should be included in the signature base string"
         },
+        "EditPhoto": {
+            "version": "2",
+            "name": "EditPhoto",
+            "httpMethod": "POST",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "required": true,
+                    "description": null
+                },
+                "caption": {
+                    "location": "query",
+                    "required": false,
+                    "description": "Caption for the photo"
+                }
+            },
+            "summary": "Edits a photo",
+            "uri": "/2/photo/{id}",
+            "notes": ""
+        },
         "CreatePhotoAlbum": {
             "version": "2",
             "name": "CreatePhotoAlbum",
