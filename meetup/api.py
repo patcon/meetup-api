@@ -152,6 +152,13 @@ class Client(object):
             if not parameters.get(param_name):
                 raise exceptions.ApiParameterError('Missing required parameter: {0}'.format(param_name))
 
+        # Collect file parameters
+        file_params = [k for k, v in six.iteritems(param_dict) if v.get('file')]
+        file_parameters = {}
+        for param_name in file_params:
+            f = parameters.pop(param_name)
+            file_parameters.update({param_name: f})
+
         # Prepare API call parameters
         request_uri = self.services[service_name]['uri'].format(**parameters)
         request_url = '{0}{1}'.format(self._api_url, request_uri)
@@ -163,7 +170,7 @@ class Client(object):
         if request_http_method == 'GET':
             response = self.session.get(request_url, params=parameters)
         elif request_http_method == 'POST':
-            response = self.session.post(request_url, data=parameters)
+            response = self.session.post(request_url, data=parameters, files=file_parameters)
         elif request_http_method == 'DELETE':
             response = self.session.delete(request_url, params=parameters)
         elif request_http_method == 'PATCH':
