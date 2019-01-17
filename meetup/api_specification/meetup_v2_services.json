@@ -292,6 +292,7 @@
                 "photo": {
                     "location": "query",
                     "required": false,
+                    "file": true,
                     "description": "The photo, encoded as multipart/form-data. The maximum file size allowed is 10MB"
                 },
                 "event_id": {
